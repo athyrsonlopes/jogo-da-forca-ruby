@@ -25,20 +25,25 @@ class AdivinharPalavra
   def jogar(opcao)
     palavra = escolher_palavra(opcao)
     letras_corretas = []
-    chances_restantes = palavra.length + 1
+    chances_restantes = 6
+    chutes = []
 
     while chances_restantes > 0
       puts "Palavra: #{exibir_palavra(palavra, letras_corretas)}"
       puts "Chances restantes: #{chances_restantes}"
-
+      puts "letras chutadas: #{chutes.join(", ")}"
       print "Digite uma letra: "
       letra = gets.chomp.downcase
 
       if palavra.include?(letra) && !letras_corretas.include?(letra)
         letras_corretas << letra
+        chutes << letra
         puts "Letra correta!"
+        
+        
       else
         chances_restantes -= 1
+        chutes << letra
         puts "Letra incorreta. Tente novamente."
       end
 
@@ -64,6 +69,7 @@ class AdivinharPalavra
     end
     exibicao.strip
   end
+  
 
   def palavra_completa?(palavra, letras_corretas)
     palavra.chars.all? { |letra| letras_corretas.include?(letra) }
