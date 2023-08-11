@@ -3,7 +3,7 @@ class Inicializacao
     system('clear')
   
     print "Inicializando."
-    4.times do |i|
+    3.times do |i|
       print "."
       sleep 1
     end 
