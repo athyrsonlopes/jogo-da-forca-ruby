@@ -4,7 +4,7 @@ module Temas
   end
 
   def self.objetos
-    ["liquidificador", "computador", "estilete"]
+    ["liquidificador", "computador", "estilete", "espelho"]
   end
 
   def self.nomes_proprios
